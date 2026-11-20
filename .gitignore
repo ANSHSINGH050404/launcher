@@ -1,0 +1,11 @@
+# Build output
+/launcher
+/launcher.exe
+/main
+*.o
+
+# Editor and OS noise
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
