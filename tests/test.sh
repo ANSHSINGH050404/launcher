@@ -16,6 +16,11 @@ if "$bin" >"$tmp/out" 2>"$tmp/err"; then
 fi
 grep -q "usage:" "$tmp/err" || fail "missing usage message"
 
+# Redirected output: never emit ANSI escape codes.
+if grep -q "$(printf '\033')" "$tmp/err"; then
+    fail "usage output contains ANSI escapes when not a terminal"
+fi
+
 # Launch a script and forward its arguments and exit status.
 cat >"$tmp/hello" <<'EOF'
 #!/bin/sh

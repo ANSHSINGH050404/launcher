@@ -33,6 +33,8 @@ hello from launcher
 
 If the target cannot be launched, `launcher` prints the reason and exits with status 1.
 
+Usage and error messages are colourised only when `stderr` is a terminal. Colour is disabled automatically for redirected output, when `TERM=dumb`, or when the `NO_COLOR` environment variable is set.
+
 ## Test
 
 ```sh
